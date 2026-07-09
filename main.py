@@ -76,7 +76,7 @@ def clear_cart():
    print("Cart🛒 cleared successfully!✅")      
 #Main function that holds every other function
 def main():
- while running:
+ while True:
    choice = main_menu()
    if choice == 1:
     food_menu()
@@ -89,8 +89,10 @@ def main():
    elif choice == 5:
       view_cart()
    elif choice == 6:
-      running = False
+      
       print("Thank you! Come again😁") 
+      break
+      
    else:
       print("Invalid Choice❌Please try again")
 
