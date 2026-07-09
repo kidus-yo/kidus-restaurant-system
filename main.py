@@ -20,9 +20,8 @@ def main_menu():
     print("2. Take Order")
     print("3. View Cart")
     print("4. remove Item")
-    print("5. Checkout")
-    print("6. Clear Cart")
-    print("7. Exit❎")
+    print("5. Clear Cart")
+    print("6. Exit❎")
      
     choice = int(input("Please Enter your choice?: "))
   
@@ -58,12 +57,17 @@ def view_cart():
 def remove_item():
    remove = input("What item would u like to remove form the cart?: ")
    if remove in food_cart:
-    food_add.pop(remove)
-    food_price.pop(food_cart[remove])
-    print(f"{remove} removed successfully from the cart🛒✅")
+    index = food_add.index(remove)
+    food_add.pop(index)
+    food_price.pop(index)
+    print(f"{remove} removed successfully form the cart!🛒✅")
    else:
       print(f"{remove} not found in the cart🛒❌")    
-      
+
+def clear_cart():
+   food_add.clear()
+   food_price.clear()
+   print("Cart🛒 cleared successfully!✅")      
 def main():
  while running:
    choice = main_menu()
@@ -75,7 +79,12 @@ def main():
      view_cart()
    elif choice == 4:
       remove_item()
-    
-
+   elif choice == 5:
+      view_cart()
+   elif choice == 6:
+      running = False
+      print("Thank you! Come again😁") 
+   else:
+      print("Invalid Choice❌Please try again")
 
 main()
