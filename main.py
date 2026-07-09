@@ -28,7 +28,6 @@ def main_menu():
   
     return choice
     
-
 def food_menu():
     print("Kidus Restaurnt Menu:")
     print("1. Hamburgers🍔..........$50.00")
@@ -58,10 +57,12 @@ def view_cart():
 
 def remove_item():
    remove = input("What item would u like to remove form the cart?: ")
-   for food, price in zip(food_add, food_price):
-      food.pop(remove)
-      price.pop(remove)
-
+   if remove in food_cart:
+    food_add.pop(remove)
+    food_price.pop(food_cart[remove])
+    print(f"{remove} removed successfully from the cart🛒✅")
+   else:
+      print(f"{remove} not found in the cart🛒❌")    
       
 def main():
  while running:
