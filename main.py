@@ -15,7 +15,8 @@ food_add = []
 food_price = []
 
 def main_menu():
-   while running: 
+   while running:
+
     print("Main Menu")
     print("1. Show food Menu")
     print("2. Take Order")
@@ -24,9 +25,14 @@ def main_menu():
     print("5. Checkout")
     print("6. Clear Cart")
     print("7. Exit❎")
-
+     
     choice = int(input("Please Enter your choice?: "))
+    if choice == 7:
+       running == False
+       print("Thank you!Come again😁")
+       break
     return choice
+    
 
 def food_menu():
     print("Kidus Restaurnt Menu:")
