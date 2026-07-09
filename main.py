@@ -1,6 +1,7 @@
 #console based restaurant-system
 running = True
-food_cart = {"Hamburgers": 50,
+#Dictionary
+food_cart = {"Hamburgers": 50,    
              "Pizza": 60,
              "Chicken": 65,
              "French Fries": 20,
@@ -11,9 +12,11 @@ food_cart = {"Hamburgers": 50,
              "Vegan Rice": 15,
              "Steaks": 70}
 
+#list as a cart
 food_add = []
 food_price = []
-
+ 
+ #FUNCTION for the main menu
 def main_menu():
     print("Main Menu")
     print("1. Show food Menu")
@@ -24,9 +27,9 @@ def main_menu():
     print("6. Exit❎")
      
     choice = int(input("Please Enter your choice?: "))
-  
     return choice
-    
+ 
+ #Function for the food Menu   
 def food_menu():
     print("Kidus Restaurnt Menu:")
     print("1. Hamburgers🍔..........$50.00")
@@ -40,6 +43,7 @@ def food_menu():
     print("9. Vegan Rice🍚..........$15.00")
     print("10. Steaks🥩.............$70.00")
 
+#Function to take order
 def take_order():
     order = input("What food would you like to order?: ")
     if order in food_cart:
@@ -48,12 +52,13 @@ def take_order():
         print(f"{order} added Sucessfully in the cart!✅")
     else:
        print(f"{order} not found in the main menu")
-    
+
+#Function to see what is added and remived    
 def view_cart():
    for food in food_add:
          price = food_cart[food]
          print(f"{food}......${price}") 
-
+#Function to remove an item
 def remove_item():
    remove = input("What item would u like to remove form the cart?: ")
    if remove in food_cart:
@@ -64,10 +69,12 @@ def remove_item():
    else:
       print(f"{remove} not found in the cart🛒❌")    
 
+#Function to clear cart
 def clear_cart():
    food_add.clear()
    food_price.clear()
    print("Cart🛒 cleared successfully!✅")      
+#Main function that holds every other function
 def main():
  while running:
    choice = main_menu()
