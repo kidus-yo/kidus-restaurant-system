@@ -15,8 +15,6 @@ food_add = []
 food_price = []
 
 def main_menu():
-   while running:
-
     print("Main Menu")
     print("1. Show food Menu")
     print("2. Take Order")
@@ -27,10 +25,7 @@ def main_menu():
     print("7. Exit❎")
      
     choice = int(input("Please Enter your choice?: "))
-    if choice == 7:
-       running == False
-       print("Thank you!Come again😁")
-       break
+  
     return choice
     
 
@@ -58,14 +53,28 @@ def take_order():
     
 def view_cart():
    for food in food_add:
-      for price in food_price:
-         print() 
+         price = food_cart[food]
+         print(f"{food}......${price}") 
+
+def remove_item():
+   remove = input("What item would u like to remove form the cart?: ")
+   for food, price in zip(food_add, food_price):
+      food.pop(remove)
+      price.pop(remove)
+
+      
 def main():
+ while running:
    choice = main_menu()
    if choice == 1:
     food_menu()
    elif choice == 2:
        take_order()
    elif choice == 3:
-      pass
+     view_cart()
+   elif choice == 4:
+      remove_item()
+    
+
+
 main()
