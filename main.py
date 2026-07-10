@@ -91,9 +91,8 @@ def main():
    elif choice == 4:
       remove_item()
    elif choice == 5:
-      view_cart()
+      clear_cart()
    elif choice == 6:
-      
       print("Thank you! Come again😁") 
       break
       
