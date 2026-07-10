@@ -1,5 +1,6 @@
 #console based restaurant-system
 running = True
+
 #Dictionary
 food_cart = {"Hamburgers": 50,    
              "Pizza": 60,
@@ -53,11 +54,12 @@ def take_order():
     else:
        print(f"{order} not found in the main menu")
 
-#Function to see what is added and remived    
+#Function to see what is added and removed    
 def view_cart():
    for food in food_add:
          price = food_cart[food]
          print(f"{food}......${price}") 
+
 #Function to remove an item
 def remove_item():
    remove = input("What item would u like to remove form the cart?: ")
@@ -69,11 +71,13 @@ def remove_item():
    else:
       print(f"{remove} not found in the cart🛒❌")    
 
+
 #Function to clear cart
 def clear_cart():
    food_add.clear()
    food_price.clear()
    print("Cart🛒 cleared successfully!✅")      
+
 #Main function that holds every other function
 def main():
  while True:
